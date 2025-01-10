@@ -1,0 +1,260 @@
+
+/*product banner style */
+/*men*/
+
+.page-heading-men {
+  margin-top: 160px;
+  margin-bottom: 30px;
+  background-image: url("../myimage/men-product-banner.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page-heading-men .inner-content {
+  padding: 150px 0px;
+  text-align: center;
+}
+
+.page-heading-men .inner-content h2 {
+  font-size: 52px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.page-heading-men .inner-content span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  font-style: italic;
+}
+
+
+/*women*/
+.page-heading-women {
+  margin-top: 160px;
+  margin-bottom: 30px;
+  background-image: url("../myimage/women-product-banner.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.page-heading-women .inner-content {
+  padding: 150px 0px;
+  text-align: center;
+}
+
+.page-heading-women .inner-content h2 {
+  font-size: 52px;
+  color:#fff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.page-heading-women .inner-content span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  font-style: italic;
+}
+
+/*kid*/
+.page-heading-kid {
+  margin-top: 160px;
+  margin-bottom: 30px;
+  background-image: url("../myimage/kid-product-banner.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page-heading-kid .inner-content {
+  padding: 150px 0px;
+  text-align: center;
+}
+
+.page-heading-kid .inner-content h2 {
+  font-size: 52px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.page-heading-kid .inner-content span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  font-style: italic;
+}
+
+/* singlr product */
+
+.page-heading-single-product {
+  margin-top: 160px;
+  margin-bottom: 30px;
+  background-image: url("../myimage/single-product-banner.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.page-heading-single-product .inner-content {
+  padding: 150px 0px;
+  text-align: center;
+}
+
+.page-heading-single-product .inner-content h2 {
+  font-size: 52px;
+  color:#fff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.page-heading-single-product .inner-content span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  font-style: italic;
+}
+
+/* cart style */
+
+.page-heading-cart {
+  margin-top: 160px;
+  margin-bottom: 30px;
+  background-image: url("../myimage/cart-banner.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.page-heading-cart .inner-content {
+  padding: 150px 0px;
+  text-align: center;
+}
+
+.page-heading-cart .inner-content h2 {
+  font-size: 52px;
+  color:#fff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.page-heading-cart .inner-content span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  font-style: italic;
+}
+
+.image-cart{
+  width:100%;
+  max-width:100px;
+  height:100px;
+  object:fit:cover;
+}
+
+.cart-heading{
+  padding:40px 0px;
+  text-align: center;
+  font-size: 52px;
+  color:#000;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+
+/* card style */
+
+.card{
+ width:300px;
+ height:26rem;
+ border-radius:5px;
+ margin-bottom:35px;
+ margin-left:0px;
+ box-shadow: 10px 10px 15px rgba(0,0,0,0.10);
+
+
+
+}
+.card .card-img-top{
+  padding:15px;
+  width:100%;
+  max-width:300px;
+  height:300px;
+  object-fit:fill;
+
+}
+
+.card h4{
+   font-size: 20px;
+  font-weight: 400;
+  color: #2a2a2a;
+  margin-bottom: 2px;
+}
+
+
+/* product pagination style */
+
+
+
+.product-pagination {
+  display: flex;
+  justify-content:center;
+}
+
+
+.product-pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.product-pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.product-pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+#men .item{
+padding:5px;
+}
+
+#men .item .thumb img {
+  width:100%;
+  max-width:300px;
+  height:300px;
+
+}
+
+#women .item{
+padding:5px;
+}
+#women .item .thumb img {
+  width:100%;
+  max-width:300px;
+  height:300px;
+}
+
+#kids .item{
+padding:5px;
+}
+#kids .item .thumb img {
+  width:100%;
+  max-width:300px;
+  height:300px;
+}
+
+
+/* account */

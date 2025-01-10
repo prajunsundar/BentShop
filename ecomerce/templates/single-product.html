@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+
+    <title>Product Detail</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/templatemo-hexashop.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+<!--
+
+-->
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="{% url 'shopapp:index' %}" class="logo">
+                            <img src="{% static 'myimage/logo.png' %}">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                             <li class="home"><a href="{% url 'shopapp:index' %}" >Home</a></li>
+                            <li class="men_link"><a href="{% url 'shopapp:men_products' %}">Men's</a></li>
+                            <li class="women_link"><a href="{% url 'shopapp:women_products' %}">Women's</a></li>
+                            <li class="kid_link"><a href="{% url 'shopapp:kid_products' %}">Kid's</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">User</a>
+                                <ul>
+                                    {% if user.is_authenticated %}
+                                    <li><a href="{% url 'userapp:account' %}">{{user.username}}</a></li>
+                                    <li class="register_link"><a href="{% url 'userapp:logout' %}">Logout</a></li>
+                                    {% else %}
+                                    <li class="register_link"><a href="{% url 'userapp:register' %}">Register</a></li>
+                                    <li class="login_link"><a href="{% url 'userapp:login' %}">login</a></li>
+                                    {% endif %}
+                                    <li class="about_link"><a href="#about-us">About Us</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li><a href="{% url 'cartapp:cart-detail' %}"><button class="btn btn-outline-success" type="submit"><i class="fa fa-shopping-cart cart-icon" aria-hidden="true"  style="font-size:20px"></i></button></a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Explore</a>
+                                <ul>
+                                    <li>
+                                        <form class="d-flex" action="{% url 'searchapp:search' %}" method="get">
+                                    {% csrf_token %}
+                                    <input class="form-control me-2" type="search" placeholder="Search" name="q" aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading-single-product" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2>Check Your Product</h2>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+
+    <!-- ***** Product Area Starts ***** -->
+    <section class="section" id="product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                <div class="left-images">
+                    <img src="{{product.image.url}}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="right-content">
+                    <h4>{{product.name}}</h4>
+                    <span class="price">Rs.{{product.price}}</span>
+                    <span>{{product.description}}</span>
+                    <hr>
+                    <div class="total">
+                        <h4>Add To Cart</h4>
+                        <div class="main-border-button"><a href="{% url 'cartapp:add-cart' product.id %}">Add To Cart</a></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Product Area Ends ***** -->
+    
+    <!-- ***** Footer Start ***** -->
+    <footer id="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="first-item">
+                        <div class="logo">
+                          <img src="{% static 'myimage/footer-logo.png' %}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Shopping &amp; Categories</h4>
+                    <ul>
+                        <li><a href="{% url 'shopapp:men_products' %}">Men’s Shopping</a></li>
+                        <li><a href="{% url 'shopapp:women_products' %}">Women’s Shopping</a></li>
+                        <li><a href="{% url 'shopapp:kid_products' %}">Kid's Shopping</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Homepage</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                       <p>Copyright © 2023 Bent OnlineShopping Co., Ltd. All Rights Reserved.</p>
+                        
+                        <br>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'js/owl-carousel.js' %}"></script>
+    <script src="{% static 'js/accordions.js' %}"></script>
+    <script src="{% static 'js/datepicker.js' %}"></script>
+    <script src="{% static '/js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/imgfix.min.js' %}"></script>
+    <script src="{% static 'js/slick.js' %}"></script>
+    <script src="{% static 'js/lightbox.js' %}"></script>
+    <script src="{% static 'js/isotope.js' %}"></script>
+    <script src="{% static 'js/quantity.js' %}"></script>
+    
+    <!-- Global Init -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+  </body>
+
+</html>
