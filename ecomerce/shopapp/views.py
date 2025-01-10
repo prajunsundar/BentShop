@@ -8,8 +8,8 @@ def index(request):
     men=product.objects.filter(gender='M')
     men_1=men[0]
     men_2 = men[1]
-    men_3 = men[1]
-    men_4 = men[1]
+    men_3 = men[2]
+    men_4 = men[3]
 
     women = product.objects.filter(gender='W')
     women_1 = women[0]
